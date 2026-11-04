@@ -46,6 +46,12 @@ const navData = [
         "logo": "assets/images/logos/huawei.png"
       },
       {
+        "title": "华为云成长中心",
+        "desc": "华为云开发者成长中心，做任务赢积分兑换好礼",
+        "url": "https://developer.huaweicloud.com/grow?sms",
+        "logo": "assets/images/logos/huawei.png"
+      },
+      {
         "title": "百度网盘青春版",
         "desc": "极速下载、无广告的百度网盘服务",
         "url": "https://pan.baidu.com/youth/pan/main",
