@@ -48,7 +48,7 @@ const navData = [
       {
         "title": "华为云成长中心",
         "desc": "华为云开发者成长中心，做任务赢积分兑换好礼",
-        "url": "https://developer.huaweicloud.com/grow?sms",
+        "url": "https://grow.developer.huaweicloud.com/",
         "logo": "assets/images/logos/huawei.png"
       },
       {
