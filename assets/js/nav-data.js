@@ -126,7 +126,7 @@ const navData = [
       {
         "title": "雪球",
         "desc": "聪明的投资者都在这里",
-        "url": "http://www.xueqiu.com/",
+        "url": "https://xueqiu.com/",
         "logo": "assets/images/logos/xueqiu.png"
       },
       {
@@ -145,7 +145,7 @@ const navData = [
         "title": "History of Market",
         "desc": "市场历史数据与行情复盘",
         "url": "https://historyofmarket.com/",
-        "logo": "https://historyofmarket.com/favicon.ico"
+        "logo": "assets/images/logos/historyofmarket.png"
       },
       {
         "title": "大道总纲",

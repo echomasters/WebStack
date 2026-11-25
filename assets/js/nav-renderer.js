@@ -15,6 +15,15 @@ function escapeHtml(str) {
     return div.innerHTML;
 }
 
+var lozadObserver = null;
+
+function getI18nText(key, fallback) {
+    if (typeof locales !== 'undefined' && typeof currentLang !== 'undefined' && locales[currentLang] && locales[currentLang][key]) {
+        return locales[currentLang][key];
+    }
+    return fallback;
+}
+
 $(document).ready(function () {
     renderNav();
     renderSidebar();
@@ -24,15 +33,29 @@ $(document).ready(function () {
         renderNav($(this).val());
     });
 
+    // Clear search on Escape key
+    $(document).on('keydown', '#search-input', function(e) {
+        if (e.key === 'Escape' && $(this).val()) {
+            $(this).val('');
+            renderNav('');
+        }
+    });
+
+    // Clear search button in empty state
+    $(document).on('click', '#clear-search-btn', function() {
+        $('#search-input').val('').focus();
+        renderNav('');
+    });
+
     // Global keyboard listener: Focus search input when typing anywhere (即敲即搜)
     $(document).on('keydown', function(e) {
-        // Ignore if user is already focused on an input or textarea
-        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+        // Ignore if user is already focused on an input, textarea, select, or editable element
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT' || e.target.isContentEditable) return;
         // Ignore modifier keys
         if (e.ctrlKey || e.altKey || e.metaKey) return;
 
-        // Check if it's a printable character key
-        if (e.key && e.key.length === 1) {
+        // Check if it's a printable non-space character key
+        if (e.key && e.key.length === 1 && e.key !== ' ') {
             $('#search-input').focus();
         }
     });
@@ -91,12 +114,29 @@ function renderNav(keyword) {
         html += '<br />';
     });
 
+    if (html === '' && keyword.trim() !== '') {
+        var safeKeyword = escapeHtml(keyword.trim());
+        var emptyTitle = escapeHtml(getI18nText('no_results_title', '未找到匹配的站点'));
+        var emptyDesc = escapeHtml(getI18nText('no_results_desc', '没有找到与 “{keyword}” 相关的导航，请尝试更换关键词。')).replace('{keyword}', safeKeyword);
+        var clearLabel = escapeHtml(getI18nText('clear_search', '清空搜索'));
+
+        html += '<div class="empty-search-state">';
+        html += '<i class="fa-search empty-search-icon" aria-hidden="true"></i>';
+        html += '<h4>' + emptyTitle + '</h4>';
+        html += '<p>' + emptyDesc + '</p>';
+        html += '<button type="button" id="clear-search-btn" class="btn btn-white btn-sm">' + clearLabel + '</button>';
+        html += '</div>';
+    }
+
     container.html(html);
 
-    // Re-init Lazy Loading
+    // Re-init Lazy Loading and clean up previous observer
     if (typeof lozad === 'function') {
-        var observer = lozad();
-        observer.observe();
+        if (lozadObserver && lozadObserver.observer) {
+            lozadObserver.observer.disconnect();
+        }
+        lozadObserver = lozad();
+        lozadObserver.observe();
     }
 }
 

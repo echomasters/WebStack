@@ -11,8 +11,11 @@ const locales = {
         'about_site_p3': '同时引入了 <strong>数据驱动视图</strong> (nav-data.js)，只需编辑 JSON 数据即可轻松管理导航项，无需深入复杂的 HTML 结构。',
         'about_project': '关于项目',
         'about_project_desc': 'Minimalist & Efficient Personal Navigation.',
-        'about_project_p1': '这是一个开源项目，基于 <a href="https://github.com/WebStackPage/WebStackPage.github.io">WebStackPage</a> 二次开发。',
-        'about_project_p2': '如果您对本项目感兴趣，或者想要部署自己的个人导航页，欢迎访问 <a href="https://github.com/echomasters/WebStack"><span class="label label-info">GitHub 项目主页</span></a> 获取更多信息。'
+        'about_project_p1': '这是一个开源项目，基于 <a href="https://github.com/WebStackPage/WebStackPage.github.io" target="_blank" rel="noopener noreferrer">WebStackPage</a> 二次开发。',
+        'about_project_p2': '如果您对本项目感兴趣，或者想要部署自己的个人导航页，欢迎访问 <a href="https://github.com/echomasters/WebStack" target="_blank" rel="noopener noreferrer"><span class="label label-info">GitHub 项目主页</span></a> 获取更多信息。',
+        'no_results_title': '未找到匹配的站点',
+        'no_results_desc': '没有找到与 “{keyword}” 相关的导航，请尝试更换关键词。',
+        'clear_search': '清空搜索'
     },
     'en': {
         'title_index': 'WebStack - Personal Navigation',
@@ -26,8 +29,11 @@ const locales = {
         'about_site_p3': 'It also introduces a <strong>data-driven view</strong> (nav-data.js), allowing you to easily manage navigation items by simply editing JSON data, without delving into complex HTML structures.',
         'about_project': 'About the project',
         'about_project_desc': 'Minimalist & Efficient Personal Navigation.',
-        'about_project_p1': 'This is an open source project, secondarily developed based on <a href="https://github.com/WebStackPage/WebStackPage.github.io">WebStackPage</a>.',
-        'about_project_p2': 'If you are interested in this project, or want to deploy your own personal navigation page, welcome to visit the <a href="https://github.com/echomasters/WebStack"><span class="label label-info">GitHub Project Page</span></a> for more information.'
+        'about_project_p1': 'This is an open source project, secondarily developed based on <a href="https://github.com/WebStackPage/WebStackPage.github.io" target="_blank" rel="noopener noreferrer">WebStackPage</a>.',
+        'about_project_p2': 'If you are interested in this project, or want to deploy your own personal navigation page, welcome to visit the <a href="https://github.com/echomasters/WebStack" target="_blank" rel="noopener noreferrer"><span class="label label-info">GitHub Project Page</span></a> for more information.',
+        'no_results_title': 'No matching sites found',
+        'no_results_desc': 'No navigation items match "{keyword}". Try another keyword.',
+        'clear_search': 'Clear search'
     }
 };
 

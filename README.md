@@ -4,7 +4,7 @@
     A minimalist, highly efficient, and data-driven personal navigation dashboard based on <a href="https://github.com/WebStackPage/WebStackPage.github.io">WebStackPage</a>.
   </p>
   <p>
-    <a href="http://nav.555212.xyz"><img src="https://img.shields.io/badge/Demo-nav.555212.xyz-blue?style=flat-square&logo=google-chrome" alt="Demo"></a>
+    <a href="https://nav.555212.xyz"><img src="https://img.shields.io/badge/Demo-nav.555212.xyz-blue?style=flat-square&logo=google-chrome" alt="Demo"></a>
     <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License">
   </p>
 </div>
